@@ -1,0 +1,115 @@
+<?php
+/***********************
+ * 1. VARIABLES DE BASE
+ ***********************/
+$nomModule = "Programmation Web";
+$nomEnseignant = "M. Ammamou";
+$nbEtudiantsTotal = 5;
+$noteValidation = 10;
+
+/************************
+ * AFFICHAGE DES INFOS
+ ************************/
+echo "<h2>Informations du module</h2>";
+echo "<p><strong>Module :</strong> $nomModule</p>";
+echo "<p><strong>Enseignant :</strong> $nomEnseignant</p>";
+echo "<p><strong>Nombre total d'étudiants :</strong> $nbEtudiantsTotal</p>";
+echo "<p><strong>Note de validation :</strong> $noteValidation</p>";
+
+/********************************
+ * 2. TABLEAUX ÉTUDIANTS + NOTES
+ ********************************/
+$etudiants = ["Ali", "Sara", "Yassine", "Hajar", "Omar"];
+$notes = [12, 8, 15, 9, 18];
+
+/********************************
+ * AJOUT & SUPPRESSION
+ ********************************/
+$etudiants[] = "Nadia";
+$notes[] = 14;
+
+// Suppression de l’étudiant "Sara"
+$index = array_search("Sara", $etudiants);
+unset($etudiants[$index]);
+unset($notes[$index]);
+
+// Réindexation
+$etudiants = array_values($etudiants);
+$notes = array_values($notes);
+
+/********************************
+ * 3. FONCTIONS
+ ********************************/
+
+function calculerMoyenne($notes) {
+    return array_sum($notes) / count($notes);
+}
+
+function estValide($note, $noteValidation) {
+    return $note >= $noteValidation;
+}
+
+function messageNote($note) {
+    if ($note >= 16) return "Excellent";
+    if ($note >= 12) return "Bien";
+    if ($note >= 10) return "Passable";
+    return "Insuffisant";
+}
+
+/********************************
+ * 4. CALCULS
+ ********************************/
+$moyenne = calculerMoyenne($notes);
+$noteMax = max($notes);
+$noteMin = min($notes);
+
+/********************************
+ * 5. AFFICHAGE DES ÉTUDIANTS
+ ********************************/
+echo "<h2>Liste des étudiants</h2>";
+echo "<ol>";
+
+$valides = 0;
+$nonValides = 0;
+
+for ($i = 0; $i < count($etudiants); $i++) {
+    $statut = estValide($notes[$i], $noteValidation);
+
+    if ($statut) {
+        $valides++;
+    } else {
+        $nonValides++;
+    }
+
+    echo "<li>";
+    echo $etudiants[$i] . " : " . $notes[$i] . "/20";
+    echo " → " . messageNote($notes[$i]);
+    echo "</li>";
+}
+
+echo "</ol>";
+
+/********************************
+ * 6. ÉTUDIANTS VALIDÉS SEULEMENT
+ ********************************/
+echo "<h2>Étudiants validés</h2>";
+echo "<ul>";
+
+foreach ($etudiants as $i => $nom) {
+    if (estValide($notes[$i], $noteValidation)) {
+        echo "<li>$nom ({$notes[$i]}/20)</li>";
+    }
+}
+
+echo "</ul>";
+
+/********************************
+ * 7. RÉSULTATS GLOBAUX
+ ********************************/
+echo "<h2>Statistiques</h2>";
+echo "<p>Moyenne de la classe : " . round($moyenne, 2) . "</p>";
+echo "<p>Note maximale : $noteMax</p>";
+echo "<p>Note minimale : $noteMin</p>";
+echo "<p>Étudiants validés : $valides</p>";
+echo "<p>Étudiants non validés : $nonValides</p>";
+?>
