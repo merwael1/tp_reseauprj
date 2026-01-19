@@ -45,11 +45,6 @@ verifier les tps.
 [Voir le rapport PDF](rapport_projet_reseau.pdf)
 
 ## Rapport du TP PHP
-Le rapport du TP PHP est disponible au format PDF dans le dossier **TP_PHP** :
-
-- 📄 Rapport_TP_PHP.pdf
-- ## Rapport du TP SQL
-Le rapport du TP SQL (gestion d’un système de réservations)
-est disponible au format PDF dans le dossier **TP_SQL** :
-
-- 📄 Rapport_TP_SQL.pdf
+📄 [Ouvrir le rapport du TP PHP](TP_PHP/Rapport_TP_PHP.pdf)
+## Rapport du TP SQL
+📄 [Ouvrir le rapport du TP SQL](TP_SQL/Rapport_TP_SQL.pdf)
