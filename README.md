@@ -23,3 +23,7 @@ et vérifier la communication entre les équipements.
 
 ## Réalisé par
 - Marwa Elkhoudari
+## Rapport du projet
+
+📄 Rapport complet du projet :  
+[Voir le rapport PDF](rapport_projet_reseau.pdf)
