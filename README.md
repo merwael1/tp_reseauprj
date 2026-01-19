@@ -17,7 +17,6 @@ verifier les tps.
 - TP_PHP : Travaux pratiques en PHP
 - TP_SQL : Travaux pratiques en SQL
 - TP_IP_Adressage : TP d’adressage IP
-- TP_DHCP : Configuration DHCP
 - TP_VLSM : Calcul et mise en place du VLSM
   Chaque TP est placé dans un dossier séparé.
   
