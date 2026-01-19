@@ -1,12 +1,26 @@
-# TP Réseaux – Cisco Packet Tracer
+- # Travaux Pratiques – Réseaux et Développement
+
+## Description
+Ce dépôt contient l’ensemble des travaux pratiques réalisés
+dans les modules PHP, SQL et Réseaux.
 
 ## Objectifs
 Mettre en place une topologie réseau simple avec Cisco Packet Tracer
 et vérifier la communication entre les équipements.
-
+verifier les tps.
 ## Outil utilisé
 - Cisco Packet Tracer
-
+- PHP
+- MySQL / SQL
+  
+## Organisation du dépôt
+- TP_PHP : Travaux pratiques en PHP
+- TP_SQL : Travaux pratiques en SQL
+- TP_IP_Adressage : TP d’adressage IP
+- TP_DHCP : Configuration DHCP
+- TP_VLSM : Calcul et mise en place du VLSM
+  Chaque TP est placé dans un dossier séparé.
+  
 ## Contenu du dépôt
 - Fichier Packet Tracer (.pkt) contenant la topologie réseau
 
@@ -20,9 +34,11 @@ et vérifier la communication entre les équipements.
 1. Ouvrir le fichier tpprojet.pkt avec Cisco Packet Tracer
 2. Lancer la simulation
 3. Vérifier la communication entre les machines
-
+4.ou ouvrir le dossier du TP souhaité Lancer le fichier correspondant (.php, .sql ou .pkt)
+5. Suivre les consignes du TP
 ## Réalisé par
 - Marwa Elkhoudari
+
 ## Rapport du projet
 
 📄 Rapport complet du projet :  
