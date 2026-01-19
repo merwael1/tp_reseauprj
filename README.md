@@ -43,3 +43,8 @@ verifier les tps.
 
 📄 Rapport complet du projet :  
 [Voir le rapport PDF](rapport_projet_reseau.pdf)
+
+## Rapport du TP PHP
+Le rapport du TP PHP est disponible au format PDF dans le dossier **TP_PHP** :
+
+- 📄 Rapport_TP_PHP.pdf
