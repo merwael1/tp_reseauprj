@@ -48,3 +48,8 @@ verifier les tps.
 Le rapport du TP PHP est disponible au format PDF dans le dossier **TP_PHP** :
 
 - 📄 Rapport_TP_PHP.pdf
+- ## Rapport du TP SQL
+Le rapport du TP SQL (gestion d’un système de réservations)
+est disponible au format PDF dans le dossier **TP_SQL** :
+
+- 📄 Rapport_TP_SQL.pdf
