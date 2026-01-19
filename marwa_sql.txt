@@ -1,0 +1,64 @@
+CREATE DATABASE RestaurantDB;
+USE RestaurantDB;
+CREATE TABLE Client (
+    idClient INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(50),
+    telephone VARCHAR(20)
+);
+CREATE TABLE TableRestaurant (
+    idTable INT PRIMARY KEY AUTO_INCREMENT,
+    numero INT,
+    capacite INT
+);
+CREATE TABLE Reservation (
+    idReservation INT PRIMARY KEY AUTO_INCREMENT,
+    idClient INT,
+    idTable INT,
+    dateReservation DATE,
+    heure TIME,
+    nombrePersonnes INT,
+    FOREIGN KEY (idClient) REFERENCES Client(idClient),
+    FOREIGN KEY (idTable) REFERENCES TableRestaurant(idTable)
+);
+INSERT INTO Client (nom, telephone) VALUES
+('Safwa', '0612345678'),
+('Hatim', '0623496789'),
+('Malak', '0634567890');
+INSERT INTO TableRestaurant (numero, capacite) VALUES
+(1, 2),
+(2, 4),
+(3, 6);
+INSERT INTO Reservation (idClient, idTable, dateReservation, heure, nombrePersonnes) VALUES
+(1, 2, '2025-11-30', '19:00:00', 3),
+(2, 1, '2025-11-28', '20:00:00', 2),
+(3, 3, '2025-12-10', '21:00:00', 5),
+(1, 1, '2025-12-09', '18:30:00', 2),
+(2, 2, '2025-12-17', '19:15:00', 4);
+
+SELECT * FROM Client;
+SELECT * FROM TableRestaurant;
+SELECT * FROM Reservation;
+SELECT * 
+FROM Reservation
+JOIN Client ON Reservation.idClient = Client.idClient
+WHERE Client.nom = 'Safwa';
+
+SELECT * FROM TableRestaurant
+WHERE capacite >= 4;
+SELECT 
+    Client.nom,
+    TableRestaurant.numero AS numeroTable,
+    Reservation.dateReservation,
+    Reservation.heure
+FROM Reservation
+JOIN Client ON Reservation.idClient = Client.idClient
+JOIN TableRestaurant ON Reservation.idTable = TableRestaurant.idTable;
+
+SELECT * FROM Reservation
+ORDER BY dateReservation ASC, heure ASC;
+
+SELECT Client.nom, COUNT(Reservation.idReservation) AS nbReservations
+FROM Reservation
+JOIN Client ON Reservation.idClient = Client.idClient
+GROUP BY Client.idClient
+HAVING COUNT(Reservation.idReservation) > 1;
